@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ylw0ymj.css">
+    <link rel="stylesheet" href="index.css">
+<title>Music Whenever, Wherever</title>
+</head>
+<body>
+<h1>
+    <a href="mv.html">  Music Whenever, Wherever</a>
+</h1>
+<script>
+    const title = document.getElementById('title');
+
+    title.addEventListener('mouseenter', () => {
+      document.documentElement.style.opacity = '0.7';
+    });
+
+    title.addEventListener('mouseleave', () => {
+      document.documentElement.style.opacity = '1';
+    });
+  </script>
+</body>
