@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/ylw0ymj.css">
+    <link rel="stylesheet" href="style.css">
+    <title>A Personal Playlist</title>
+</head>
+<body>
+  <div class="player">
+    <div class="record">
+      <div class="label"></div>
+    </div>
+    <div class="tone-arm">
+      <div class="control"></div>
+      </div>
+      <a href="mv.html" class="btn" id="btn"></a>
+
+      <div class="slider-container">
+        <input 
+        type="range"
+        class="slider"
+        min="0"
+        max="1"
+        step="0.1"
+        value="0.7"
+        />
+      </div>
+  </div>
+<audio loop class="my-song" src="Vinyl Scratch Sound Pack Sound Effects.mp3"
+preload="auto"></audio>
+
+  </div>
+</body>
+<script>
+  let state = false;
+  let btn = document.querySelector(".btn");
+  let record = document.querySelector(".record");
+  let toneArm = document.querySelector(".tone-arm");
+  let song = document.querySelector(".my-song");
+  let slider = document.querySelector(".slider");
+
+  btn.addEventListener("click", () => {
+    if (state == false) {
+      record.classList.add("on");
+      toneArm.classList.add("play");
+      setTimeout(() => {
+        song.play();
+      }, 1000);
+    } else {
+      record.classList.add("on");
+      toneArm.classList.add("play");
+      song.pause();
+    }
+    state = !state;
+  });
+
+  slider.addEventListener("input", (e) => {
+    song.volume = Number(e.target.value);
+  });
+
+
+
+
+  document.getElementById("btn").addEventListener("click", function(event) {
+   
+        event.preventDefault();
+        
+       
+        setTimeout(function() {
+            
+            window.location.href = "mv.html";
+        }, 4000); 
+    });
+
+  
+</script>
